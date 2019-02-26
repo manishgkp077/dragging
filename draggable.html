@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Draggable and Dropable in jquery with Example</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <div class="wrapper">
+
+        <p id="droppable"></p>
+
+        <div id="draggable-words"> Instanbul I in Country. am
+            <!-- <span>Instanbul</span>
+			<span>I</span>
+			<span>in</span>
+			<span>Country.</span>
+			<span>am</span> -->
+        </div>
+
+    </div>
+
+
+
+    <script src="http://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="http://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+        (function($) {
+            $.fn.dragWords = function() {
+                var str = this.text();
+                var broken = str.split(' ');
+                for (var i = 0; i < broken.length; i++) {
+                    broken[i] = '<span class="drag-kay">' + broken[i] + '</span> ';
+                    broken.join(' ');
+                    this.html(broken);
+                }
+                $('.drag-kay').draggable({
+                    containment: '#droppable'
+                });
+                $('.drag-kay').droppable();
+            };
+        }(jQuery));
+
+        $('#draggable-words').dragWords();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,13 @@
+#droppable {
+	border: 1px solid #000;
+	height: 150px;
+	width: 500px;
+	padding:10px;
+	box-sizing: border-box;
+	margin: 0px 0px 40px;
+}
+
+span {
+	padding: 1px 2px;
+	display: inline-block;
+}
